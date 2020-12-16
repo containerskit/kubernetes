@@ -3,9 +3,9 @@ FROM linuxkit/alpine:1b05307ae8152e3d38f79e297b0632697a30c65c AS build
 # When changing kubernetes_version remember to also update:
 # - scripts/mk-image-cache-lst and run `make refresh-image-caches` from top-level
 # - pkg/e2e-test/Dockerfile
-ENV kubernetes_version v1.10.3
-ENV cni_version        v0.7.1
-ENV critools_version   v1.0.0-alpha.0
+ENV kubernetes_version v1.18.12
+ENV cni_version        v0.8.7
+ENV critools_version   v1.19.0
 
 RUN apk add -U --no-cache \
   bash \

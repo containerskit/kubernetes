@@ -97,4 +97,4 @@ if [ -n "${metadata}" ] ; then
     echo "${metadata}" > $state/metadata.json
 fi
 
-exec linuxkit run ${KUBE_RUN_ARGS} -networking ${KUBE_NETWORKING} -cpus ${KUBE_VCPUS} -mem ${KUBE_MEM} -state "${state}" -disk size=${KUBE_DISK} -data-file $state/metadata.json -iso ${uefi} "${img}${suffix}"
+exec linuxkit run ${KUBE_RUN_ARGS} -publish 3022:22/tcp -networking ${KUBE_NETWORKING} -cpus ${KUBE_VCPUS} -mem ${KUBE_MEM} -state "${state}" -disk size=${KUBE_DISK} -data-file $state/metadata.json -iso ${uefi} "${img}${suffix}"
